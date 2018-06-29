@@ -11,7 +11,7 @@ public class Jogo {
 		Estrutura fixa = new Estrutura();
 		
 		Bloco fixa1 = new Bloco(); 
-		Bloco fixa2 = new Bloco(2,0);
+		Bloco fixa2 = new Bloco(3,0);
 		fixa.setBlocoPrincipal(fixa1);
 		fixa1.setProxBloco(fixa2);
 		

@@ -4,14 +4,14 @@ public class Jogo {
 
 	public static void main(String[] args) {
 		Bloco principal = new Bloco();
-		Bloco secundario = new Bloco(1,0);
+		Bloco secundario = new Bloco(3,0);
 		principal.setProxBloco(secundario);
 		Estrutura movel = new Estrutura();
 		movel.setBlocoPrincipal(principal);
 		Estrutura fixa = new Estrutura();
 		
 		Bloco fixa1 = new Bloco(); 
-		Bloco fixa2 = new Bloco(2,0);
+		Bloco fixa2 = new Bloco(3,0);
 		fixa.setBlocoPrincipal(fixa1);
 		fixa1.setProxBloco(fixa2);
 		

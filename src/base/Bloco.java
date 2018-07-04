@@ -1,34 +1,17 @@
 package base;
 
 public class Bloco {
-	private int posX;
-	private int posY;
-	private Bloco proxBloco = null;
+	private String cor;
 	public Bloco() {
-		this(0,0);
+		this("#FFFFFF");
+	}	
+	public Bloco(String cor) {	
+		setCor(cor);
 	}
-	
-	public Bloco(int x, int y) {
-		setPosY(y);
-		setPosX(x);		
+	private void setCor(String cor){
+		this.cor = cor;
 	}
-	
-	public int getPosY() {
-		return posY;
-	}
-	public void setPosY(int posY) {
-		this.posY = posY;
-	}
-	public int getPosX() {
-		return posX;
-	}
-	public void setPosX(int posX) {
-		this.posX = posX;
-	}
-	public Bloco getProxBloco() {
-		return proxBloco;
-	}
-	public void setProxBloco(Bloco proxBloco) {
-		this.proxBloco = proxBloco;
+	private String getCor(){
+		return this.cor;
 	}
 }

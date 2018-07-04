@@ -3,25 +3,21 @@ import base.*;
 public class Jogo {
 
 	public static void main(String[] args) {
-		Bloco principal = new Bloco();
-		Bloco secundario = new Bloco(3,0);
-		principal.setProxBloco(secundario);
-		Estrutura movel = new Estrutura();
-		movel.setBlocoPrincipal(principal);
+		Estrutura movel = new Estrutura(0,1);
 		Estrutura fixa = new Estrutura();
+
+		Bloco[][] blocos = new Bloco[5][5];
+		for(int i = 0; i<5; i++)
+			for(int j = 0; j<5;j++)
+				blocos[i][j] = new Bloco("#000000");
+		movel.setBlocos(blocos);
 		
-		Bloco fixa1 = new Bloco(); 
-		Bloco fixa2 = new Bloco(3,0);
-		fixa.setBlocoPrincipal(fixa1);
-		fixa1.setProxBloco(fixa2);
-		
-		//Setar a altura e largura de forma automática ao adicionar bloco principal
-		fixa.setAltura(1);
-		fixa.setLargura(3);		
-		
-		movel.setPosX(1);
-		movel.setPosY(1);
-		
-		System.out.println(movel.existeBlocoAbaixo(fixa));		
+		blocos = null;
+
+		blocos = new Bloco[30][100];
+		blocos[0][0] = new Bloco("#FF");
+		fixa.setBlocos(blocos);
+
+		System.out.println(movel.existeBlocoAbaixo(fixa));
 	}
 }

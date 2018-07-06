@@ -15,6 +15,7 @@ public class Estrutura {
 	public Estrutura(int posX, int posY) {
 		this(posX, posY, new Bloco[0][0]);
 	}	
+	//Todo bloco deve ser [5][5], tendo um bloco em [2][2], sendo este o pivot.
 	public Estrutura(int posX, int posY, Bloco[][] blocos){
 		setBlocos(blocos);
 		this.setPosX(posX);
@@ -108,7 +109,17 @@ public class Estrutura {
 		//Por enquanto está iterando todos os blocos de móvel (que provavelmente serão, no máximo, 25 blocos). Talvez haja solução melhor
 		for (int i = 0; i<largura; i++)
 			for(int j = 0; j<altura; j++)
-				if (this.existeBloco(i, j) && fixa.existeBloco(posX + i, posY+j-1)) return true;		
+				if (this.existeBloco(i, j) && fixa.existeBloco(posX + i, posY + j - 1)) return true;		
 		return false;
+	}
+
+	//Qualquer rotação (ao tomarmos um pivot posicionado em (2,2)) é facilmente apontada como (y, 4-x)
+	public void rotacionar(){
+		Bloco[][] tempBloco = new Bloco[5][5];
+		Bloco[][] thisBlocos = this.getBlocos();
+		for(int x = 0; x < 5; x++)
+			for(int y = 0; y < 5; y++)
+				tempBloco[y][4-x] = thisBlocos[x][y];
+		this.setBlocos(tempBloco);
 	}
 }

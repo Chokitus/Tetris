@@ -7,17 +7,67 @@ public class Jogo {
 		Estrutura fixa = new Estrutura();
 
 		Bloco[][] blocos = new Bloco[5][5];
-		for(int i = 0; i<5; i++)
-			for(int j = 0; j<5;j++)
-				blocos[i][j] = new Bloco("#000000");
-		movel.setBlocos(blocos);
 		
-		blocos = null;
+		blocos[2][2] = new Bloco("X");
+		blocos[2][3] = new Bloco("X");
+		blocos[3][3] = new Bloco("X");
+		blocos[2][1] = new Bloco("X");
 
-		blocos = new Bloco[30][100];
-		blocos[0][0] = new Bloco("#FF");
-		fixa.setBlocos(blocos);
-
-		System.out.println(movel.existeBlocoAbaixo(fixa));
+		movel.setBlocos(blocos);
+		String str = "";
+		for (int i = 4; i >= 0; i--){
+			for (int j = 0; j < 5; j++){
+				if(blocos[j][i] == null){
+					str = str + " ";
+				}
+				else{
+					str = str + blocos[j][i];
+				}				
+			}						
+			System.out.println(str);
+			str = "";
+		}
+		movel.rotacionar();
+		blocos = movel.getBlocos();
+		for (int i = 4; i >= 0; i--){
+			for (int j = 0; j < 5; j++){
+				if(blocos[j][i] == null){
+					str = str + " ";
+				}
+				else{
+					str = str + blocos[j][i];
+				}				
+			}						
+			System.out.println(str);
+			str = "";
+		}
+		movel.rotacionar();
+		blocos = movel.getBlocos();
+		for (int i = 4; i >= 0; i--){
+			for (int j = 0; j < 5; j++){
+				if(blocos[j][i] == null){
+					str = str + " ";
+				}
+				else{
+					str = str + blocos[j][i];
+				}				
+			}						
+			System.out.println(str);
+			str = "";
+		}
+		movel.rotacionar();
+		blocos = movel.getBlocos();
+		for (int i = 4; i >= 0; i--){
+			for (int j = 0; j < 5; j++){
+				if(blocos[j][i] == null){
+					str = str + " ";
+				}
+				else{
+					str = str + blocos[j][i];
+				}				
+			}						
+			System.out.println(str);
+			str = "";
+		}
 	}
 }

@@ -1,7 +1,7 @@
 package base;
 
 public class Bloco {
-	private String cor;
+	private String cor = " ";
 	public Bloco() {
 		this("#FFFFFF");
 	}
@@ -21,6 +21,6 @@ public class Bloco {
 	}
 
 	public String getCor(){
-		return this.cor;
+		return (this.cor == null ? " " : this.cor);
 	}
 }
